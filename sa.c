@@ -1,14 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sa.c                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: julasne <julasne@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/22 14:28:34 by julasne           #+#    #+#             */
+/*   Updated: 2026/11/22 14:28:34 by julasne          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	s(t_stack *stack)
 {
 	int	temp;
+	int	tempi;
 
 	if (stack && stack->next)
 	{
 		temp = stack->value;
+		tempi = stack->index;
 		stack->value = stack->next->value;
+		stack->index = stack->next->index;
 		stack->next->value = temp;
+		stack->next->index = tempi;
 	}
 }
 
